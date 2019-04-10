@@ -12,7 +12,7 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Dashboard} />
-            <Route path="/project/:id" component={EventDetails} />
+            <Route path="/event/:id" component={EventDetails} />
           </Switch>
         </div>
       </BrowserRouter>
