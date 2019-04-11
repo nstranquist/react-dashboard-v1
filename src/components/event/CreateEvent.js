@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import connect from 'redux';
+import { createEvent } from '../../store/actions/eventActions';
 
 class CreateEvent extends Component {
     state = {
@@ -36,4 +38,10 @@ class CreateEvent extends Component {
     }
 }
 
-export default CreateEvent
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createEvent: (event) => dispatch(createEvent(event))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(CreateEvent);
