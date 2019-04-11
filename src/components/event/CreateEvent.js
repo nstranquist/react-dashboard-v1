@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import connect from 'redux';
+import { connect } from 'react-redux';
 import { createEvent } from '../../store/actions/eventActions';
 
 class CreateEvent extends Component {
     state = {
-        title: "",
-        content: ""
+        name: "",
+        description: ""
     }
     handleChange = (e) => {
         this.setState({
@@ -14,7 +14,8 @@ class CreateEvent extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        //console.log(this.state);
+        this.props.createEvent(this.state);
     }
     render() {
         return (
@@ -22,12 +23,12 @@ class CreateEvent extends Component {
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="grey-text text-darken-3">Create Event</h5>
                     <div className="input-field">
-                        <label htmlFor="event-name">Event Name</label>
-                        <input type="text" id="event-name" onChange={this.handleChange} />
+                        <label htmlFor="name">Event Name</label>
+                        <input type="text" id="name" onChange={this.handleChange} />
                     </div>
                     <div className="input-field">
-                        <label htmlFor="event-description">Description</label>
-                        <textarea id="event-description" className="materialize-textarea" onChange={this.handleChange} />
+                        <label htmlFor="description">Description</label>
+                        <textarea id="description" className="materialize-textarea" onChange={this.handleChange} />
                     </div>
                     <div className="input-field">
                         <button className="btn pink btn-lighten-1 z-depth-0">Create</button>
