@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Notifications from './Notifications';
 import EventList from '../event/EventList';
+import { connect } from 'react-redux';
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
     render() {
         return (
             <div className="dashboard container">
@@ -18,3 +19,11 @@ export default class Dashboard extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        events: state.event.events
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard);
