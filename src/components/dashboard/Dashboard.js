@@ -23,7 +23,7 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    /*console.log(state);*/
     return {
         events: state.firestore.ordered.events
     }
