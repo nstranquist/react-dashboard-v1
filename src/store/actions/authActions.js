@@ -11,3 +11,13 @@ export const signIn = (credentials) => {
         })
     }
 }
+
+export const signOut = () => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firebase = getFirebase();
+        
+        firebase.auth().signOut().then(() => { /* signOut() is a built in method to firebase */
+            dispatch({ type: 'SIGNOUT_SUCCESS' });
+        });
+    }
+}
