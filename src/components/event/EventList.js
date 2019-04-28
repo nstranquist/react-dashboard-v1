@@ -8,8 +8,8 @@ const EventList = ({events}) => {  //grabbing projects[] from props using js6 de
             { events && events.map(event => {  //includes "projects &&" portion because if no projects exist, don't bother mapping them
                 //we get 1 event each time through the array
                 return (
-                    <Link to={'/event/' + event.id}>
-                        <EventSummary event={event} key={event.id} />
+                    <Link to={'/event/' + event.id} key={event.id}>
+                        <EventSummary event={event} />
                     </Link>
                 )
             })}
