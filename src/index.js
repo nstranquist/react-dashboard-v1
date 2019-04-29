@@ -14,13 +14,16 @@ import fbConfig from './config/fbConfig';
 const store = createStore(rootReducer, 
     compose(
         applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-        reactReduxFirebase(fbConfig),
+        reactReduxFirebase(fbConfig, {attachAuthIsReady: true}),
         reduxFirestore(fbConfig)
     )
 );
+
+/*promise that waits for auth to occur */
 //applyMiddleware() can be used to add any store enhancer. now we can return functions in our store with thunk
 //these functions within the action creators can interact with our database
 
-
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
-serviceWorker.unregister();
+store.firebaseAuthIsReady.then(() => {
+    ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+    serviceWorker.unregister();
+})
