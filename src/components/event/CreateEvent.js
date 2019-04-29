@@ -17,6 +17,7 @@ class CreateEvent extends Component {
         e.preventDefault();
         //console.log(this.state);
         this.props.createEvent(this.state);
+        this.props.history.push('/');  /* history lets redirect to push destination */
     }
     render() {
         const { auth } = this.props;

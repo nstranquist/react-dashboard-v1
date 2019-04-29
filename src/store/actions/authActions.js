@@ -31,15 +31,16 @@ export const signUp = (newUser) => {
             newUser.email,
             newUser.password
         ).then((response) => {  /* response contains info about user */
-            console.log('response: ' + response);
             return firestore.collection('users').doc(response.user.uid).set({  /* if doesn't exist, firestore will create for us. also, we don't want auto id, we want same id */
                 firstName: newUser.firstName,
                 lastName: newUser.lastName,
                 initials: newUser.firstName[0] + newUser.lastName[0]
             })
         }).then(() => {
+            console.log('success');
             dispatch({ type: 'SIGNUP_SUCCESS' })
         }).catch((err) => {
+            console.log('error ', err);
             dispatch({ type: 'SINGUP_ERROR', err })
         })
     }
