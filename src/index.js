@@ -19,7 +19,7 @@ const store = createStore(rootReducer,
     )
 );
 
-/*promise that waits for auth to occur */
+/* promise that waits for auth to occur */
 //applyMiddleware() can be used to add any store enhancer. now we can return functions in our store with thunk
 //these functions within the action creators can interact with our database
 
