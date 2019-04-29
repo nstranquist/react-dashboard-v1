@@ -18,8 +18,8 @@ const EventDetails = (props) => {
                         <p>{ event.description }</p>
                     </div>
                     <div className="card-action grey lighten-4 grey-text">
-                        <div>Posted by { event.hostname}, <span className="darken-3">{ event.hostposition }</span></div>
-                        <div>12 April, 3pm</div>
+                        <div>Posted by { event.firstName } { event.lastName }, <span className="red-text">info</span></div>
+                        <div>date here</div>
                     </div>
                 </div>
             </div>

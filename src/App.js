@@ -4,7 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import EventDetails from './components/event/EventDetails';
 import SignIn from './components/auth/SignIn';
-import SignUp from './components/auth/SignUp';
+import SignUpPlayer from './components/auth/SignUpPlayer';
 import CreateEvent from './components/event/CreateEvent';
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
             <Route exact path="/" component={Dashboard} />
             <Route path="/event/:id" component={EventDetails} />
             <Route path="/signin" component={SignIn} />
-            <Route path="/signup" component={SignUp} />
+            <Route path="/signup" component={SignUpPlayer} />
             <Route path="/create" component={CreateEvent} />
           </Switch>
         </div>

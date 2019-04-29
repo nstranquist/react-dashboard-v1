@@ -5,7 +5,7 @@ const EventSummary = ({event}) => {  //getting specific event from events[], whi
         <div className="card z-depth-0 event-summary">
             <div className="card-content grey-text text-darken-3">
                 <span className="card-title">{event.name}</span>
-                <p>Posted by venue owner</p>
+                <p>Posted by { event.firstName } { event.lastName }</p>
                 <p className="grey-text">3 December, 3pm</p>
             </div>
         </div>
