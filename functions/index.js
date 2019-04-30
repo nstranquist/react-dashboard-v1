@@ -30,3 +30,22 @@ exports.eventCreated = functions.firestore
         return createNotification(notification);  /* calls above function using newly created 'notification' */
 });
 
+exports.userJoined = functions.auth
+    .user()
+    .onCreate(user => {
+
+        return admin.firestore().collection('users')
+            .doc(user.uid).get().then(doc => {
+
+                const newUser = doc.data();
+                const notification = {
+                    content: 'Joined the platform',
+                    user: `${newUser.firstName}`,
+                    time: admin.firestore.FieldValue.serverTimestamp()
+                }
+
+                return createNotification(notification);    
+
+            });
+
+})
