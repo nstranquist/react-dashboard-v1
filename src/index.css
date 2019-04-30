@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('/images/background-brick-wall.jpg');
+  background: lightgray; /*url('/images/background-brick-wall.jpg');*/
   background-size: 100%;
   background-position: bottom;
   /*background-color: #000;*/
