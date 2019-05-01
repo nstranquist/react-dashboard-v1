@@ -27,3 +27,4 @@ yarn-error.log*
 DEVNOTES.md
 /src/config
 /src/serviceWorker.js
+/.firebase
